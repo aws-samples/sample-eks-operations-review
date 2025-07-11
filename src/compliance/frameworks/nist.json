@@ -1,0 +1,59 @@
+{
+  "name": "NIST SP 800-53 for EKS",
+  "version": "1.0.0",
+  "description": "NIST Special Publication 800-53 controls for Amazon EKS",
+  "controls": [
+    {
+      "id": "AC-3",
+      "title": "Access Enforcement",
+      "description": "Enforce approved authorizations for logical access to information and system resources",
+      "severity": "HIGH",
+      "checks": [
+        {
+          "check_id": "IRSA Implementation",
+          "expected_result": "PASSED"
+        },
+        {
+          "check_id": "Network Policies",
+          "expected_result": "PASSED"
+        }
+      ]
+    },
+    {
+      "id": "AU-2",
+      "title": "Audit Events",
+      "description": "Identify the events that the system is capable of auditing",
+      "severity": "MEDIUM",
+      "checks": [
+        {
+          "check_id": "Audit Logging",
+          "expected_result": "PASSED"
+        }
+      ]
+    },
+    {
+      "id": "SC-8",
+      "title": "Transmission Confidentiality and Integrity",
+      "description": "Protect the confidentiality and integrity of transmitted information",
+      "severity": "HIGH",
+      "checks": [
+        {
+          "check_id": "Public API Endpoint",
+          "expected_result": "FAILED"
+        }
+      ]
+    },
+    {
+      "id": "SC-28",
+      "title": "Protection of Information at Rest",
+      "description": "Protect the confidentiality and integrity of information at rest",
+      "severity": "HIGH",
+      "checks": [
+        {
+          "check_id": "Secrets Encryption",
+          "expected_result": "PASSED"
+        }
+      ]
+    }
+  ]
+}

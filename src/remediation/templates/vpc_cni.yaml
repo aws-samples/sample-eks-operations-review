@@ -1,0 +1,11 @@
+name: Update VPC CNI Plugin
+description: Update the VPC CNI plugin to the latest version
+check_id: VPC CNI Version
+remediation_type: eks_api
+api_call:
+  method: update_addon
+  params:
+    clusterName: '{{cluster.name}}'
+    addonName: vpc-cni
+    addonVersion: '{{latest_version}}'
+    resolveConflicts: OVERWRITE

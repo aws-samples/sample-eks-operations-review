@@ -1,0 +1,67 @@
+{
+  "name": "CIS Amazon EKS Benchmark",
+  "version": "1.0.1",
+  "description": "Center for Internet Security (CIS) Benchmarks for Amazon EKS",
+  "controls": [
+    {
+      "id": "CIS-EKS-1.1",
+      "title": "Restrict Access to the EKS Control Plane Endpoint",
+      "description": "Ensure that the EKS cluster control plane endpoint is not publicly accessible",
+      "severity": "HIGH",
+      "checks": [
+        {
+          "check_id": "Public API Endpoint",
+          "expected_result": "FAILED"
+        }
+      ]
+    },
+    {
+      "id": "CIS-EKS-1.2",
+      "title": "Enable EKS Control Plane Audit Logging",
+      "description": "Ensure that EKS control plane audit logging is enabled",
+      "severity": "MEDIUM",
+      "checks": [
+        {
+          "check_id": "Audit Logging",
+          "expected_result": "PASSED"
+        }
+      ]
+    },
+    {
+      "id": "CIS-EKS-2.1",
+      "title": "Enable Envelope Encryption for Kubernetes Secrets",
+      "description": "Ensure that envelope encryption is enabled for Kubernetes secrets",
+      "severity": "HIGH",
+      "checks": [
+        {
+          "check_id": "Secrets Encryption",
+          "expected_result": "PASSED"
+        }
+      ]
+    },
+    {
+      "id": "CIS-EKS-3.1",
+      "title": "Use IAM Roles for Service Accounts",
+      "description": "Ensure that IAM roles are used for service accounts",
+      "severity": "HIGH",
+      "checks": [
+        {
+          "check_id": "IRSA Implementation",
+          "expected_result": "PASSED"
+        }
+      ]
+    },
+    {
+      "id": "CIS-EKS-5.1",
+      "title": "Implement Network Policies",
+      "description": "Ensure that network policies are implemented",
+      "severity": "MEDIUM",
+      "checks": [
+        {
+          "check_id": "Network Policies",
+          "expected_result": "PASSED"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+name: Enable Network Policies
+description: Install Calico for network policy enforcement
+check_id: Network Policies
+remediation_type: kubernetes
+manifest: |
+  apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: calico-system
+  ---
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    name: calico-node
+    namespace: calico-system
+    labels:
+      k8s-app: calico-node
+  spec:
+    selector:
+      matchLabels:
+        k8s-app: calico-node
+    template:
+      metadata:
+        labels:
+          k8s-app: calico-node
+      spec:
+        serviceAccountName: calico-node
+        containers:
+        - name: calico-node
+          image: calico/node:v3.25.0
+          env:
+          - name: DATASTORE_TYPE
+            value: "kubernetes"
+          - name: FELIX_LOGSEVERITYSCREEN
+            value: "info"
+          - name: CALICO_NETWORKING_BACKEND
+            value: "none"
+          - name: CLUSTER_TYPE
+            value: "k8s,ecs"
+          - name: CALICO_DISABLE_FILE_LOGGING
+            value: "true"
+          - name: FELIX_TYPHAK8SSERVICENAME
+            value: "calico-typha"
+          - name: FELIX_DEFAULTENDPOINTTOHOSTACTION
+            value: "ACCEPT"
+          securityContext:
+            privileged: true
+          resources:
+            requests:
+              cpu: 250m
