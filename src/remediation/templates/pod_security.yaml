@@ -1,0 +1,22 @@
+name: Enable Pod Security Standards
+description: Enable Pod Security Standards for the cluster
+check_id: Pod Security Standards
+remediation_type: kubernetes
+manifest: |
+  apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: default
+    labels:
+      pod-security.kubernetes.io/enforce: baseline
+      pod-security.kubernetes.io/audit: restricted
+      pod-security.kubernetes.io/warn: restricted
+  ---
+  apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: kube-system
+    labels:
+      pod-security.kubernetes.io/enforce: privileged
+      pod-security.kubernetes.io/audit: baseline
+      pod-security.kubernetes.io/warn: baseline

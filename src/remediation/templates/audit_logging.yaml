@@ -1,0 +1,17 @@
+name: Enable Audit Logging
+description: Enable Kubernetes audit logging for the cluster
+check_id: Audit Logging
+remediation_type: eks_api
+api_call:
+  method: update_cluster_config
+  params:
+    name: '{{cluster.name}}'
+    logging:
+      clusterLogging:
+        - types:
+            - api
+            - audit
+            - authenticator
+            - controllerManager
+            - scheduler
+          enabled: true
