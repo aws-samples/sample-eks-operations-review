@@ -1,12 +1,10 @@
-# Byte-compiled / optimized / DLL files
+# AgentK8s - Git Ignore Configuration
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -20,126 +18,73 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
 
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
+# Virtual environments
 venv/
 ENV/
-env.bak/
-venv.bak/
+env/
+.venv/
 
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# AWS credentials and config
-.aws/
-aws-credentials.json
-credentials.json
-
-# Kubernetes config
-.kube/
-kubeconfig*
-
-# Generated reports
-reports/
-*.pdf
-*.csv
-
-# Streamlit
-.streamlit/
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+**/aws_config_local.yaml
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# Logs
+*.log
+logs/
+streamlit.log
+
+# AWS credentials (never commit these!)
+.aws/
+credentials
+config
 
 # Temporary files
 *.tmp
 *.temp
 temp/
-tmp/
 
-# Logs
-*.log
-logs/
+# Jupyter Notebooks
+.ipynb_checkpoints
 
-# Backup files
-*.bak
-*.backup
+# pytest
+.pytest_cache/
+.coverage
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Application specific
+reports/
+*.pdf
+*.json.backup
+
+# Windows
+desktop.ini
