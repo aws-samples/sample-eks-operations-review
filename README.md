@@ -28,7 +28,7 @@ AgentK8snew/
 └── infrastructure/        # IaC templates
 ```
 
-## 🔧 Features Preserved
+## 🔧 Features
 
 ### ✅ Current Working Features
 - **AWS Authentication**: IAM Role and Access Key support
