@@ -1,0 +1,47 @@
+# AgentK8s - Clean Implementation Requirements
+
+# Core Dependencies
+streamlit>=1.29.0
+boto3>=1.34.0
+botocore>=1.34.0
+
+# Data Processing
+pandas>=2.2.0
+numpy>=1.24.0
+
+# Visualization
+plotly>=5.19.0
+matplotlib>=3.8.0
+
+# Networking and Security
+requests>=2.32.0
+urllib3>=2.2.0
+
+# Configuration and Environment
+python-dotenv>=1.0.1
+pyyaml>=6.0.1
+
+# Report Generation
+reportlab>=4.2.0
+PyMuPDF>=1.24.0
+
+# Text Processing
+beautifulsoup4>=4.12.3
+chardet>=5.2.0
+charset-normalizer>=3.3.0
+
+# Security
+defusedcsv>=2.0.0
+
+# Kubernetes (for future multi-agent features)
+kubernetes>=29.0.0
+
+# Async Support (for multi-agent framework)
+aiohttp>=3.9.0
+asyncio-mqtt>=0.16.0
+
+# Development and Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0
