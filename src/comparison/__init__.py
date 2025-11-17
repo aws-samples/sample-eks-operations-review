@@ -1,1 +1,0 @@
-# Comparison package for EKS Operational Review Agent

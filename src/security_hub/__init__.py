@@ -1,1 +1,0 @@
-# Security Hub integration package for EKS Operational Review Agent
