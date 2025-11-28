@@ -8,7 +8,7 @@ sys.path.append('.')
 
 from core.config import Config
 from core.aws_client import AWSClientManager
-from core.analyzers import HealthAnalyzer, SecurityAnalyzer
+from core.unified_analyzer import UnifiedClusterAnalyzer
 
 def test_configuration():
     """Test configuration system"""
@@ -33,9 +33,8 @@ def test_analyzers_initialization():
     print("🔍 Testing Analyzers Initialization...")
     try:
         # Test with dummy values
-        health_analyzer = HealthAnalyzer("test-cluster", "us-west-2")
-        security_analyzer = SecurityAnalyzer("test-cluster", "us-west-2")
-        print("✅ Analyzers initialized successfully")
+        unified_analyzer = UnifiedClusterAnalyzer("test-cluster", "us-west-2")
+        print("✅ Unified analyzer initialized successfully")
     except Exception as e:
         print(f"❌ Analyzer initialization failed: {e}")
 
